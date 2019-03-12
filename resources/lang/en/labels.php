@@ -114,6 +114,23 @@ return [
                 'view' => 'View User',
             ],
         ],
+        'ringforts' => [
+                'active'              => 'Active Ringforts',
+                'edit'       => 'Edit Ringfort',
+                'management' => 'Ringfort Management',
+                'table' => [
+                    'entity_id' => 'entity_id',
+                    'classcode'     => 'classcode',
+                    'classdesc'            => 'classdesc',
+                    'smrs'            => 'smrs',
+                    'tland_names'            => 'tland_names',
+                    'lat'           => 'lat',
+                    'long'            => 'long',
+                    'new_lat'       => 'new_lat',
+                    'new_long'            => 'new_long',
+                    'total'           => 'ringfort total|ringforts total',
+                ],
+            ],
     ],
 
     'frontend' => [

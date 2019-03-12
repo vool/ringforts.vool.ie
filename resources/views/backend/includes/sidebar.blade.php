@@ -9,6 +9,11 @@
                     <i class="nav-icon icon-speedometer"></i> @lang('menus.backend.sidebar.dashboard')
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ active_class(Active::checkUriPattern('admin/ringforts')) }}" href="{{ route('admin.ringforts.index') }}">
+                    <i class="nav-icon far fa-circle"></i> @lang('menus.backend.sidebar.ringforts')
+                </a>
+            </li>
 
             <li class="nav-title">
                 @lang('menus.backend.sidebar.system')
