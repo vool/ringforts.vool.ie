@@ -26,6 +26,11 @@ return [
 
         'dashboard' => [
             'title'   => 'Dashboard',
+            'welcome' => 'Welcome',,
+            'show'    => 'Show'
+        ],
+        'ringforts' => [
+            'title'   => 'Ringforts',
             'welcome' => 'Welcome',
         ],
 

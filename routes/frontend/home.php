@@ -20,6 +20,8 @@ Route::post('contact/send', [ContactController::class, 'send'])->name('contact.s
  * These routes can not be hit if the password is expired
  */
 Route::group(['middleware' => ['auth', 'password_expires']], function () {
+    Route::get('{id}', [HomeController::class, 'show'])->name('show');
+
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         /*
          * User Dashboard Specific

@@ -90,6 +90,7 @@ return [
         ],
 
         'with' => [],
+        'maps_api_key' => env('GMAPS_API_KEY'),
     ],
 
     'linkedin' => [
@@ -110,4 +111,11 @@ return [
         'scopes'        => [],
         'with'          => [],
     ],
+    'bing' => [
+        'maps_api_key' => env('BINGMAP_API_KEY')
+        ],
+        
+    'mapbox' => [
+        'maps_api_key' => env('MAPBOX_API_KEY')
+        ]
 ];

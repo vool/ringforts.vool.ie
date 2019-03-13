@@ -36,6 +36,13 @@ return [
                 'view'            => 'View User',
             ],
         ],
+        'ringforts' => [
+                'all'             => 'All Ringforts',
+                'rejected'        => 'Rejected Ringforts',
+                'confirmed'       => 'Confirmed Ringforts',
+                'pending'         => 'Pending Ringforts',
+                'status'          => 'Ringfort Status'
+            ],
 
         'log-viewer' => [
             'main'      => 'Log Viewer',
@@ -48,6 +55,7 @@ return [
             'general'   => 'General',
             'history'   => 'History',
             'system'    => 'System',
+            'ringforts'    => 'Ringforts',
         ],
     ],
 

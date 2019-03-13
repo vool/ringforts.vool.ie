@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Models\Ringfort;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('api')->get('/ringforts', 'Api\RingfortController@index');
+
+Route::middleware('api')->get('/ringforts/{entity_id}', 'Api\RingfortController@show');

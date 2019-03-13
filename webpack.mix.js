@@ -13,10 +13,22 @@ const mix = require('laravel-mix');
 
 mix.setPublicPath('public');
 
+mix.copyDirectory('./node_modules/leaflet/dist/images', 'public/img/leaflet');
+mix.copyDirectory('resources/images', 'public/img');
+
 mix.sass('resources/sass/frontend/app.scss', 'css/frontend.css')
     .sass('resources/sass/backend/app.scss', 'css/backend.css')
-    .js('resources/js/frontend/app.js', 'js/frontend.js')
     .js([
+        './node_modules/leaflet/dist/leaflet.js',
+        './node_modules/leaflet.featuregroup.subgroup/dist/leaflet.featuregroup.subgroup.js',
+        './node_modules/leaflet.markercluster/dist/leaflet.markercluster.js',
+        './node_modules/leaflet.heat/dist/leaflet-heat.js',
+        './node_modules/sidebar-v2/js/leaflet-sidebar.min.js',
+        './node_modules/leaflet-bing-layer/leaflet-bing-layer.js',
+        'resources/js/frontend/app.js'
+        ], 'js/frontend.js')
+    .js([
+        './node_modules/leaflet/dist/leaflet.js',
         'resources/js/backend/before.js',
         'resources/js/backend/app.js',
         'resources/js/backend/after.js'
