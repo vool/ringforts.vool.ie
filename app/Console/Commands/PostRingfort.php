@@ -66,7 +66,10 @@ class PostRingfort extends Command
 
                 $this->status = $this->ringfort->classdesc."\r\n\r\n";
 
-                $this->status .= $this->ringfort->tland_names.", \r\n";
+                if (isset($this->ringfort->tland_names)) {
+                    $this->status .= $this->ringfort->tland_names.", \r\n";
+                }
+
 
                 if (isset($oc_result['results'][0]['components']['county'])) {
                     $this->status .= $oc_result['results'][0]['components']['county']."\r\n";
@@ -77,17 +80,16 @@ class PostRingfort extends Command
                 }
 
 
-
-
                 $this->status .= "Ireland \r\n";
 
+                $this->status .= "\r\n".$this->ringfort->entity_id."\r\n";
                 $this->status .= "\r\n".$this->ringfort->smrs."\r\n\r\n";
 
                 // hash tags
                 $this->status .= "#everyringfort \r\n";
 
                 // extras
-                $this->status .= "#PiDay #PiDay2019";
+                //$this->status .= "";
 
                 $this->doTwitter();
 
@@ -119,8 +121,6 @@ class PostRingfort extends Command
 ]);
     }
 
-
-
     /**
      * Execute the console command.
      *
@@ -132,12 +132,10 @@ class PostRingfort extends Command
         date_default_timezone_set('UTC');
 
 
-        /////// CONFIG ///////
+        /* IG Confs */
 
         $debug = true;
         $truncatedDebug = true;
-        //////////////////////
-
 
         $ig = new Instagram($debug, $truncatedDebug);
 
@@ -149,19 +147,6 @@ class PostRingfort extends Command
         }
 
         try {
-            // The most basic upload command, if you're sure that your photo file is
-            // valid on Instagram (that it fits all requirements), is the following:
-            // $ig->timeline->uploadPhoto($photoFilename, ['caption' => $captionText]);
-
-            // However, if you want to guarantee that the file is valid (correct format,
-            // width, height and aspect ratio), then you can run it through our
-            // automatic photo processing class. It is pretty fast, and only does any
-            // work when the input file is invalid, so you may want to always use it.
-            // You have nothing to worry about, since the class uses temporary files if
-            // the input needs processing, and it never overwrites your original file.
-            //
-            // Also note that it has lots of options, so read its class documentation!
-
             $loc = $ig->location->search($this->ringfort->lat, $this->ringfort->long)->getVenues()[0];
             $photo = new InstagramPhoto($this->image);
             $ig->timeline->uploadPhoto($photo->getFile(), [
