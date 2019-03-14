@@ -117,5 +117,12 @@ return [
         
     'mapbox' => [
         'maps_api_key' => env('MAPBOX_API_KEY')
-        ]
+      ],
+    'opencage' => [
+        'key' => env('OPENCAGE_KEY')
+    ],
+    'instagram' => [
+        'username' => env('INSTAGRAM_USERNAME'),
+        'password' => env('INSTAGRAM_PASSWORD')
+    ]
 ];

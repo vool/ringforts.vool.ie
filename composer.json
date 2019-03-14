@@ -18,8 +18,11 @@
         "laravel/framework": "5.7.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "^1.0",
+        "mgp25/instagram-php": "^5.0",
+        "opencage/geocode": "^2.0",
         "spatie/laravel-html": "^2.4",
         "spatie/laravel-permission": "^2.5",
+        "thujohn/twitter": "^2.2",
         "torann/geoip": "^1.0",
         "webpatser/laravel-uuid": "^3.0"
     },

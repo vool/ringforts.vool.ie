@@ -161,6 +161,7 @@ return [
         /*
          * Package Service Providers that aren't auto-discover...
          */
+        Thujohn\Twitter\TwitterServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -229,6 +230,7 @@ return [
         'Active' => HieuLe\Active\Facades\Active::class,
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
 
     ],
 

@@ -23,7 +23,8 @@ class Ringfort extends Model
         'org_long',
         'new_lat',
         'new_long',
-        'link'
+        'link',
+        'priority'
     ];
 
     protected $appends = [

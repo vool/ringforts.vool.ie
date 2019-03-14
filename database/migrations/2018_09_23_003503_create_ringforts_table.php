@@ -26,8 +26,8 @@ class CreateRingfortsTable extends Migration
             $table->decimal('new_long', 10, 7)->nullable();
             $table->string('link')->nullable();
             $table->integer('status')->default(0);
-            $table->tinyInteger('posted')->default(0)->unsigned();
-            //$table->timestamp('posted')->nullable()
+            $table->integer('priority')->default(0);
+            $table->timestamp('posted')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
