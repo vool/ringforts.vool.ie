@@ -36,8 +36,8 @@ class PostRingfort extends Command
     public function __construct()
     {
         parent::__construct();
-        // Gte the entries which have not been posted, or marked bad (status -1), ordered by priorty
-        $this->ringfort = Ringfort::whereNull('posted')->where('status', '>=', '0')->orderBy('priority', 'desc')->first();
+        // Get the entries which have not been posted, or marked bad (status -1), ordered by status and priorty
+        $this->ringfort = Ringfort::whereNull('posted')->where('status', '>=', '0')->orderBy('priority', 'desc')->orderBy('status', 'desc')->first();
     }
 
     /**
