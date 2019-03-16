@@ -19,7 +19,9 @@ class HomeController extends Controller
 
         $stats['rejected_pc'] =  $stats['pending_pc'] = $stats['confirmed_pc'] = 0;
 
-        $stats['total'] =  Ringfort::all()->count();
+        $stats['total'] =  Ringfort::withTrashed()->count();
+
+        $stats['deleted'] =  Ringfort::onlyTrashed()->count();
 
         $stats['rejected'] =  Ringfort::rejected()->count();
 
@@ -33,6 +35,8 @@ class HomeController extends Controller
             $stats['pending_pc'] =  ($stats['pending']/$stats['total'])*100;
 
             $stats['confirmed_pc'] =  ($stats['confirmed']/$stats['total'])*100;
+
+            $stats['deleted_pc'] =  ($stats['deleted']/$stats['total'])*100;
         }
 
         return view('frontend.index')
@@ -47,7 +51,7 @@ class HomeController extends Controller
     {
         $stats = array();
 
-        $stats['total'] =  Ringfort::all()->count();
+        $stats['total'] =  Ringfort::withTrashed()->count();
 
         $stats['rejected'] =  Ringfort::rejected()->count();
         $stats['rejected_pc'] =  ($stats['rejected']/$stats['total'])*100;
@@ -57,6 +61,9 @@ class HomeController extends Controller
 
         $stats['confirmed'] =  Ringfort::confirmed()->count();
         $stats['confirmed_pc'] =  ($stats['confirmed']/$stats['total'])*100;
+
+        $stats['deleted'] =  Ringfort::onlyTrashed()->count();
+        $stats['deleted_pc'] =  ($stats['deleted']/$stats['total'])*100;
 
         return view('frontend.index')
             ->with('stats', $stats)

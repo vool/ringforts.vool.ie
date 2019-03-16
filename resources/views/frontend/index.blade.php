@@ -22,7 +22,7 @@
         attribution : 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
 
-    var sat_google = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+    var sat_google = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
         maxZoom: 20,
         subdomains:['mt0','mt1','mt2','mt3']
     });
@@ -36,8 +36,8 @@
     accessToken: '{{Config::get('services.mapbox.maps_api_key')}}'
 });
 
-    var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution : '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    var osm = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution : '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
     });
 
     var baseMaps = {
@@ -76,7 +76,7 @@
 
         $.getJSON("/api/ringforts/"+marker.properties.entity_id, function(data) {
 
-            $('#googlelocMap').attr("src", "https://maps.googleapis.com/maps/api/staticmap?center="+data.lat+","+data.long+"&zoom=17&size=400x400&&maptype=satellite&markers=icon:http%3A%2F%2Fvool.ie%2Fcrosshairs.png|anchor:center|"+data.lat+","+data.long+"&key={{Config::get('services.google.maps_api_key')}}");
+            $('#googlelocMap').attr("src", "https://maps.googleapis.com/maps/api/staticmap?center="+data.lat+","+data.long+"&zoom=17&size=400x400&&maptype=satellite&markers=color:red|anchor:center|"+data.lat+","+data.long+"&key={{Config::get('services.google.maps_api_key')}}");
 
             $('#yandexlocMap').attr("src", "https://static-maps.yandex.ru/1.x/?lang=en-US&ll="+data.long+","+data.lat+"&z=17&l=sat&size=400,400");
 

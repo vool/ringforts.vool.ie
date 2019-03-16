@@ -50,7 +50,7 @@
                 <div class="progress-bar bg-success" role="progressbar" style="width: {{$stats['confirmed_pc']}}%" aria-valuenow="{{$stats['confirmed_pc']}}" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <small class="text-muted">{{$stats['confirmed']}}/{{$stats['total']}}</small>
-            
+
             <div class="text-uppercase mb-1 mt-2">
                 <small><b>Rejected</b></small>
             </div>
@@ -58,7 +58,7 @@
                 <div class="progress-bar bg-danger" role="progressbar" style="width: {{$stats['rejected_pc']}}%" aria-valuenow="{{$stats['rejected_pc']}}" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <small class="text-muted">{{$stats['rejected']}}/{{$stats['total']}}</small>
-            
+
             <div class="text-uppercase mb-1 mt-2">
                 <small><b>Pending</b></small>
             </div>
@@ -67,26 +67,34 @@
             </div>
             <small class="text-muted">{{$stats['pending']}}/{{$stats['total']}}</small>
 
+						<div class="text-uppercase mb-1 mt-2">
+								<small><b>Deleted</b></small>
+						</div>
+						<div class="progress progress-xs">
+								<div class="progress-bar bg-danger" role="progressbar" style="width: {{$stats['deleted_pc']}}%" aria-valuenow="{{$stats['deleted_pc']}}" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+						<small class="text-muted">{{$stats['deleted']}}/{{$stats['total']}}</small>
+
 		</div>
 
 		<div class="sidebar-pane" id="profile">
 			<h1 class="sidebar-header">Ringfort<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
 			<div class="well">
-			    
+
 			    <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" id="gmap-tab" data-toggle="tab" href="#gmap" role="tab" aria-controls="gmap" aria-selected="true">Google</a>
 					</li>
-                   <li class="nav-item">
-                        <a class="nav-link" id="mbmap-tab" data-toggle="tab" href="#mbmap" role="tab" aria-controls="mbmap" aria-selected="false">Mapbox</a>
-                    </li>
+					<li class="nav-item">
+						<a class="nav-link" id="mbmap-tab" data-toggle="tab" href="#mbmap" role="tab" aria-controls="mbmap" aria-selected="false">Mapbox</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link" id="bmap-tab" data-toggle="tab" href="#bmap" role="tab" aria-controls="bmap" aria-selected="false">Bing</a>
 					</li>
-                   <li class="nav-item">
-                        <a class="nav-link" id="ymap-tab" data-toggle="tab" href="#ymap" role="tab" aria-controls="ymap" aria-selected="false">Yandex</a>
-                    </li>
+					<li class="nav-item">
+						<a class="nav-link" id="ymap-tab" data-toggle="tab" href="#ymap" role="tab" aria-controls="ymap" aria-selected="false">Yandex</a>
+					</li>
 				</ul>
 
 				<!-- Tab panes -->
@@ -94,19 +102,17 @@
 					<div class="tab-pane active" id="gmap" role="tabpanel" aria-labelledby="gmap-tab">
 						<img src="" id="googlelocMap"></>
 					</div>
-                    <div class="tab-pane" id="mbmap" role="tabpanel" aria-labelledby="mbmap-tab">
-                        <img src="" id="mapboxlocMap"></>
-                    </div>
-                    <div class="tab-pane" id="bmap" role="tabpanel" aria-labelledby="bmap-tab">
-                        <img src="" id="binglocMap"></>
-                    </div>
+          <div class="tab-pane" id="mbmap" role="tabpanel" aria-labelledby="mbmap-tab">
+              <img src="" id="mapboxlocMap"></>
+          </div>
+          <div class="tab-pane" id="bmap" role="tabpanel" aria-labelledby="bmap-tab">
+              <img src="" id="binglocMap"></>
+          </div>
 					<div class="tab-pane" id="ymap" role="tabpanel" aria-labelledby="ymap-tab">
 						<img src="" id="yandexlocMap"></>
 					</div>
 				</div>
 
-
-			    
 			    <h2>entity_id: <span id="entity_id"></span></h2>
 			    <div>classcode: <span id="classcode" ></span></div>
 			    <div>classdesc: <span id="classdesc"></span></div>
@@ -116,7 +122,7 @@
 			    <div id="long"></div>
 			    <div id="latlng"></div>
 			    <a href="" id="link" target="_blank">Link</a>
-			    
+
 			    <div id="status"></div>
 			</div>
 		</div>
