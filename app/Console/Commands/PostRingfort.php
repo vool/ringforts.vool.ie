@@ -26,7 +26,7 @@ class PostRingfort extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Post ringfort image/info to the social net !';
 
     /**
      * Create a new command instance.

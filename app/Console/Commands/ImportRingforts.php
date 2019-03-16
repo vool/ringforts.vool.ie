@@ -19,7 +19,7 @@ class ImportRingforts extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Import SMR dataset, filter out RATH/CASH/RIFO';
 
     /**
      * Create a new command instance.
