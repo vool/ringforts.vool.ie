@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Log;
 use File;
 use Config;
 use Twitter;
@@ -144,8 +145,8 @@ class PostRingfort extends Command
         try {
             $ig->login(Config::get('services.instagram.username'), Config::get('services.instagram.password'));
         } catch (\Exception $e) {
-            echo 'Something went wrong: '.$e->getMessage()."\n";
-            exit(0);
+            Log::error("Instagram login error: ".$e->getMessage());
+            echo 'Instagram login error: '.$e->getMessage()."\n";
         }
 
         try {
@@ -156,7 +157,8 @@ class PostRingfort extends Command
               'location' => $loc
       ]);
         } catch (\Exception $e) {
-            echo 'Something went wrong: '.$e->getMessage()."\n";
+            Log::error("Instagram upload error: ".$e->getMessage());
+            echo 'Instagram upload error: '.$e->getMessage()."\n";
         }
     }
 }
