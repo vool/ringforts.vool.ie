@@ -86,7 +86,7 @@ class PostRingfort extends Command
                 $this->status .= "\r\n".$this->ringfort->entity_id."\r\n";
                 $this->status .= "\r\n".$this->ringfort->smrs."\r\n\r\n";
 
-                $this->status .= "\r\n".$this->ringfort->link."\r\n\r\n";
+                $this->status .= "\r\nhttps://maps.archaeology.ie/historicenvironment/?SMRS=".$this->ringfort->smrs."\r\n\r\n";
 
                 // hash tags
                 $this->status .= "#everyringfort \r\n";
