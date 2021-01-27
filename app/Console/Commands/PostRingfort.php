@@ -116,11 +116,12 @@ class PostRingfort extends Command
     {
         $loc = Twitter::getGeoSearch(['lat' =>$this->ringfort->lat, 'long' => $this->ringfort->long]);
 
+        $loc_id = isset($loc->result) ? $loc->result->places[0]->id : NULL;
 
         $uploaded_media = Twitter::uploadMedia(['media' => File::get($this->image)]);//'/home/keith/projects/ringforts.vool.ie/public/be_soft.png')]);
         return Twitter::postTweet(['status' => $this->status,
   'media_ids' => $uploaded_media->media_id_string,
-  'place_id' => $loc->result->places[0]->id
+  'place_id' => $loc_id
 ]);
     }
 
